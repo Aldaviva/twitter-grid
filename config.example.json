@@ -1,0 +1,16 @@
+{
+	"server": {
+		"port": 8080
+	},
+	"db": {
+		"host": "localhost",
+		"port": 27017,
+		"name": "twitter-grid"
+	},
+	"twitter": {
+		"consumerKey": "",
+		"consumerSecret": "",
+		"accessTokenKey": "",
+		"accessTokenSecret": ""
+	}
+}
