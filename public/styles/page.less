@@ -1,0 +1,38 @@
+html {
+	height: 100%;
+}
+
+body {
+	background : white;
+	height     : inherit;
+	overflow   : hidden;
+	width      : 100%;
+}
+
+.container {
+	height     : inherit;
+	text-align : center;
+
+	h1 {
+		@width: @icon_size * 12;
+		@height: @icon_size * 3;
+
+		background   : url("../images/twitter.png") no-repeat left center;
+		color        : fade(#292f33, 80%);
+		display      : inline-block;
+		font         : 37px "Gotham Medium";
+		height       : @height;
+		line-height  : @height;
+		padding-left : 140px;
+		position     : relative;
+		top          : 3 * @icon_size
+	}
+
+	.icons {
+		.icon {
+			height   : @icon_size;
+			position : absolute;
+			width    : @icon_size;
+		}
+	}
+}

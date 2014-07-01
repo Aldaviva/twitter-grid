@@ -11,6 +11,7 @@
 		"consumerKey": "",
 		"consumerSecret": "",
 		"accessTokenKey": "",
-		"accessTokenSecret": ""
+		"accessTokenSecret": "",
+		"pollingInterval": 300000
 	}
 }
