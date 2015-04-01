@@ -1,14 +1,21 @@
 var API_ROOT = "/cgi-bin/";
 var ICON_PLACEHOLDER_MASK = [
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-	[1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
-	[1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
-	[1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1],
+	[1,1,1,1,1,1,1,1,1]
 ];
 var ICON_SIZE = 120;
 
@@ -39,6 +46,11 @@ function render(){
 	var coords = getRandomCoordinates();
 	var fragment = $(document.createDocumentFragment());
 	_.forEach(tweets, function(tweet, tweetIdx){
+		var linkEl = $('<a>')
+			.attr({
+				href: 'https://twitter.com/'+tweet.screenName,
+				target: '_blank'
+			});
 		var iconEl = $('<img>')
 			.addClass('icon')
 			.attr({
@@ -49,7 +61,8 @@ function render(){
 				top: coords[tweetIdx][1] * ICON_SIZE,
 				left: coords[tweetIdx][0] * ICON_SIZE
 			});
-		fragment.append(iconEl);
+		linkEl.append(iconEl);
+		fragment.append(linkEl);
 	});
 	iconsEl.append(fragment);
 }

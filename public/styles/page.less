@@ -11,24 +11,32 @@ body {
 
 .container {
 	height     : inherit;
-	text-align : center;
+	text-align : left;
 
 	h1 {
-		@width: @icon_size * 12;
-		@height: @icon_size * 3;
+		@width: @icon_size * 7;
+		@height: @icon_size * 1;
 
 		background   : url("../images/twitter.png") no-repeat left center;
+		box-sizing   : border-box;
 		color        : fade(#292f33, 80%);
 		display      : inline-block;
 		font         : 37px "Gotham Medium";
 		height       : @height;
-		line-height  : @height;
+		left         : 1 * @icon_size;
+		line-height  : 52px;
 		padding-left : 140px;
+		padding-top  : 5px;
 		position     : relative;
-		top          : 3 * @icon_size
+		top          : 7.5 * @icon_size;
+		width        : @width;
 	}
 
 	.icons {
+		a {
+			border: none;
+		}
+
 		.icon {
 			height   : @icon_size;
 			position : absolute;
